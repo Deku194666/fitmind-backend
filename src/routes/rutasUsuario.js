@@ -8,13 +8,14 @@ const { createSession } = require('../sessionService');
 // Ruta de prueba para verificar que funciona
 router.get('/', async (req, res) => {
   try {
-    const usuarios = await Usuario.find(); // Busca todos los usuarios
-    res.json(usuarios); // Envía resultado como JSON
-  } catch (error) {
-    console.error(error);
+    const usuarios = await Usuario.find();
+    res.json(usuarios);
+  } catch (err) {
+    console.error('Error real al obtener usuarios:', err);  
     res.status(500).json({ mensaje: 'Error al obtener los usuarios' });
   }
 });
+
 
 
 // Registro de usuario
