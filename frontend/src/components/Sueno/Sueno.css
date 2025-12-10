@@ -1,0 +1,234 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  
+ 
+}
+
+
+
+
+
+.formulario-sueno {
+
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border: 2px solid #4a90e2;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: visible !important;    /* permite que el contenido crezca sin scroll interno */
+  height: auto; 
+
+
+    
+}
+
+
+
+
+/* Título */
+.titulo-sueno {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2980b9;
+}
+
+/* Label de Fecha */
+.fecha {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2980b9;
+  margin-bottom: 10px;
+  margin-left: 3rem
+}
+
+/* Contenedor de Fecha */
+.fecha-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+
+/* Input Fecha */
+.fecha-input {
+
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 10rem !important; /* achica el campo */
+  margin-left: 4rem !important;
+  margin-bottom: 3rem !important;
+
+}
+
+/* Fila con Hora de Dormir y Hora de Despertar */
+.fila-centro {
+  display: flex;
+  flex-direction: column; /* 👈 cambia de fila a columna */
+  align-items: center;    /* centra horizontalmente los inputs */
+  gap: 20px;               /* espacio entre los dos */
+  width: 100%;
+}
+
+
+.fila-centro .input-centro {
+  width: 320px;
+}
+
+/* Inputs y Textareas */
+.input-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18rem !important;
+  margin-left: 4.8rem !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2980b9 !important;
+
+}
+
+.horadormir-input {
+
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 10rem !important; /* achica el campo */
+  margin-left: 4rem !important;
+  margin-bottom: 2rem !important;
+
+}
+
+
+.input-centro1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16rem !important;
+  margin-left: 4.7rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2980b9 !important;
+  
+}
+
+
+.horadespertar-input {
+
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 10rem !important; /* achica el campo */
+  margin-left: 4rem !important;
+  margin-bottom: 2rem !important;
+
+}
+
+
+.despertarnocturno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16rem !important;
+  margin-left: 4.7rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2980b9 !important;
+  
+}
+
+
+.despertaresnocturnos-input {
+
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 10rem !important; /* achica el campo */
+  margin-left: 4rem !important;
+  margin-bottom: 2rem !important;
+
+}
+
+.calidadsueno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16rem !important;
+  margin-left: 1rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2980b9 !important;
+  
+}
+
+
+.input-centro input,
+.input-centro textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Checkboxes */
+.checkbox-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+  width: 320px;
+  margin-left: 5rem !important;
+}
+
+/* Botón */
+.boton-centro {
+  width: 19rem !important; 
+  background-color: #2980b9;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5rem !important;
+}
+
+.boton-centro:hover {
+  background-color: #2980b9;
+}
+
+/* Formulario centrado */
+.formulario-centro {
+  display: grid;
+  gap: 16px;
+  justify-items: center; /* centra todos los elementos en cada fila */
+}
+
+

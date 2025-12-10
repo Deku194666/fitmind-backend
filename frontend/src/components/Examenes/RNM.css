@@ -1,0 +1,70 @@
+
+
+.p13 {
+
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2980b9;
+    text-align: left;
+    margin-left: 6rem;
+    margin-top: 3rem;
+    margin-right: 2rem;
+
+}
+
+.p14 {
+
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2980b9;
+    text-align: left;
+    margin-left: 6rem;
+    margin-top: 3rem;
+
+}
+
+.p15 {
+
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 6rem;
+    max-width:  99rem;
+    margin-right: 4rem;
+    text-align: justify;
+
+
+}
+
+.p16 {
+
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2980b9;
+    text-align: left;
+    margin-left: 6rem;
+    margin-top: 3rem;
+
+}
+
+.p17 {
+
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 6rem;
+    max-width:  99rem;
+    margin-right: 4rem;
+    text-align: justify;
+    list-style-type: disc;
+}
+
+
+.imagen-derecha {
+  float: right;
+  margin-left: 50px;
+  margin-bottom: 1rem;
+  margin-right: 6rem;
+  width: 27rem; /* Puedes ajustar el tamaño aquí */
+  height: 35rem;
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  margin-top: 3rem;
+}

@@ -1,0 +1,57 @@
+
+/* src/components/SecondaryBar.css */
+
+.secondary-bar {
+  background-color: lightcyan;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+}
+
+.bar-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #2980b9;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bar-button:hover {
+  color: #2980b9;
+}
+
+
+@media (max-width: 600px) {
+  .secondary-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .bar-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #e0f7fa;
+    flex: 0 1 calc(33.33% - 12px); /* ancho base para 3 botones por fila (restamos gap) */
+    max-width: 140px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Para que el último botón (el quinto) se ajuste y no quede muy pequeño,
+     forzamos que ocupe la mitad del ancho disponible para segunda fila */
+  .bar-button:nth-child(4),
+  .bar-button:nth-child(5) {
+    flex: 0 1 calc(50% - 12px);
+  }
+}
+
+
+

@@ -1,0 +1,36 @@
+
+
+
+/* src/components/NavBarAl.css */
+
+.navbar-ex {
+  background-color: lightcyan;
+  padding: 5px 20px;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-ex-ul {
+  list-style: none;
+  display: flex;           /* 🔥 NECESARIO para que funcione gap */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 190px;               /* 🔥 Espaciado entre las opciones */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-ex-link {
+  font-size: 16px;
+  color: #2980b9;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-ex-link:hover {
+  color: #1c5e80; /* Letras más oscuras al pasar el mouse */
+  background-color: transparent; /* ⚠️ Esto asegura que NO aparezca rectángulo */
+
+}

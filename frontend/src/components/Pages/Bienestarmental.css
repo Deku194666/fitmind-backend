@@ -1,0 +1,40 @@
+
+.Parra1 {
+
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2980b9;
+    text-align: left;
+    margin-left: 6rem;
+    margin-top: 3rem;
+
+}
+
+.Parra1´1 {
+
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 32rem;
+    margin-top: -7.1rem;
+    margin-right: 6rem ;
+
+}
+
+.Parra1´2 {
+
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 6rem;
+    margin-top: -2.4rem;
+    margin-right: 6rem ;
+
+}
+
+.Parra2 {
+
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 6rem;
+    max-width:  89rem;
+
+}

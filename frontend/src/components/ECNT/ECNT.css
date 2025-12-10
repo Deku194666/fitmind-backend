@@ -1,0 +1,47 @@
+
+/* src/components/ECNT.css */
+
+
+.p1 { 
+    font-size: 3rem;
+    max-width: 1200px;
+    font-weight: 900;
+    color: #2980b9;
+    margin-left: 6rem;
+    margin-top: 3rem;
+
+}
+
+.p2 {
+
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 10rem;
+    text-align: justify;
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+
+.ecnt-list {
+  list-style: none;
+  padding: 0;
+  font-weight: 700;
+}
+
+.ecnt-list li {
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  margin-bottom: 3rem;
+}
+
+.ecnt-list a {
+  color: #2980b9;
+}
+
+.ecnt-list a:hover {
+  text-decoration: none;
+}
+
+
+

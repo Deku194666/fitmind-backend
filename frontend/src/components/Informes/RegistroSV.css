@@ -1,0 +1,40 @@
+
+
+
+.Par1 { 
+    font-size: 3.5rem;
+    margin-left: 3rem;
+    font-weight: 640;
+    margin-top: 2rem;
+    color: #2980b9;
+}
+
+.Par2 { 
+
+    font-size: 3rem;
+    font-weight: 500;
+    margin-left: 3rem;
+    margin-top: 5rem;
+}
+
+.ParGrafico { 
+
+    font-size: 3rem;
+    font-weight: 500;
+    margin-left: 13rem;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+    
+}
+
+
+.ParGraficoPA { 
+
+    font-size: 3rem;
+    font-weight: 500;
+    margin-left: 13rem;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+
+    
+}

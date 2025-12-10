@@ -1,0 +1,92 @@
+/* Estilos base (los tuyos) */
+.brand-logo {
+  font-weight: 700;
+}
+
+.titulo-bienvenida {
+  margin-top: 8rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2980b9;
+}
+
+.texto1-bienvenida {
+  margin-top: 3rem;
+  font-size: 2.2rem;
+  width: 45%;
+  line-height: 2.6rem;
+  font-weight: 600;
+}
+
+.texto2-bienvenida {
+  margin-top: 3.6rem;
+  font-size: 1.5rem;
+  width: 43%;
+  line-height: 2.1rem;
+  margin-bottom: 12rem;
+}
+
+.logo-fitmind {
+  width: 560px;
+  height: 420px;
+  float: right;
+  margin-top: -39rem;
+  border-radius: 110px;
+  margin-right: -2rem;
+}
+
+.nav-link-custom {
+  font-size: 18px;          
+  font-weight: bold;        
+  color: #fff !important;   
+  margin-left: 13px;       
+  text-transform: uppercase; 
+  transition: color 0.3s;  
+}
+
+/* --- Responsive para pantallas pequeñas --- */
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .seccion-bienvenida {
+    width: 100%;
+    margin-top: 3rem;
+    float: none;
+    text-align: center;
+  }
+
+  .titulo-bienvenida {
+    margin-top: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .texto1-bienvenida,
+  .texto2-bienvenida {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-fitmind {
+    float: none;
+    margin: 2rem auto 4rem auto;
+    width: 80vw;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50px;
+    margin-top: 0;
+    margin-right: 1;
+    display: block;
+    margin-bottom: 6rem;
+  }
+}

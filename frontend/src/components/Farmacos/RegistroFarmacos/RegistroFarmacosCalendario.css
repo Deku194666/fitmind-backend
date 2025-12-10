@@ -1,0 +1,124 @@
+
+
+.contenedor {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
+  padding: 0 20px;
+  color: #333;
+}
+
+.titulo {
+  color: #2980b9;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.contenedor-principal {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contenedor-calendario {
+  min-width: 280px;
+  flex: 1;
+  max-width: 350px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.contenedor-formulario {
+  flex: 1;
+  max-width: 450px;
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  border: 1px solid #ddd;
+}
+
+.subtitulo {
+  color: #2980b9;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input,
+.textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #16a085;
+  outline: none;
+}
+
+.textarea {
+  resize: none;
+}
+
+.boton {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #2980b9;
+}
+
+.mensaje {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.mensaje.error {
+  color: #d32f2f;
+}
+
+.mensaje.exito {
+  color: #2980b9;
+}
+
+.lista-farmacos {
+  margin-top: 25px;
+}
+
+.lista-farmacos ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.farmaco-item {
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.3;
+  cursor: default;
+  user-select: none;
+}

@@ -1,0 +1,32 @@
+
+
+.topbar-logo {
+  font-size: 2.3rem;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+
+.boton {
+    font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden; /* 🔥 evita que se desborde el contenido hacia los lados */
+}
+
+
+@media (max-width: 600px) {
+  .topbar-logo {
+    font-size: 1.5rem;
+  }
+  }

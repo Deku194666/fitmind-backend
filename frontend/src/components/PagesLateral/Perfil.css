@@ -1,0 +1,39 @@
+
+
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.perfil-container {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.Parraf1 {
+
+    color: #2980b9;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-left: 4rem;
+}
+
+.Parraf2 {
+
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-left: 4rem;
+}
+
+.Parraf3 {
+
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-left: 4rem;
+}

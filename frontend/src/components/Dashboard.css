@@ -1,0 +1,81 @@
+/* Global box-sizing para evitar overflow inesperado */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.titulo3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #2980b9;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.parrafo1 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.parrafo2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2980b9;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.parrafo31 {
+  font-size: 1.53rem !important;
+  margin-bottom: 2rem;
+  margin-left: 1rem !important;
+  line-height: 1.2rem;
+  text-align: left;
+}
+
+.parrafo21 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2980b9;
+  margin-left: -1rem !important;
+  text-align: center !important;
+}
+
+
+
+.calendariofarmacos {
+  margin-left: 6rem;
+
+}
+
+/* Media Query para pantallas móviles */
+@media (max-width: 600px) {
+  .titulo3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .parrafo1 {
+    font-size: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .parrafo2 {
+    font-size: 1.5rem;
+    margin-left: 5%; /* mejor % que fija para que se ajuste */
+    text-align: left;
+  }
+
+  .parrafo31 {
+    font-size: 1rem !important;
+    margin-left: 5% !important; /* mismo cambio */
+    line-height: 1.2rem;
+    text-align: left;
+  }
+}

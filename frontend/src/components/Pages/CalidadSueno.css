@@ -1,0 +1,39 @@
+
+
+.titulo1 {
+
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: #2980b9;
+    text-align: center;
+    margin-left: 6rem;
+    margin-top: 3rem;
+
+}
+
+.parra2 {
+
+    font-size: 1.8rem;
+    text-align: left;
+    margin-left: 6rem;
+    max-width:  99rem;
+    margin-right: 2.5rem;
+    margin-bottom: 7rem;
+
+}
+
+.titulo2 { 
+
+    font-size: 3rem;
+    color: #2980b9;
+    font-weight: 700;
+    margin-left: 3.5rem;
+
+
+}
+
+
+.Lista{
+
+    margin-left: 5rem;
+}

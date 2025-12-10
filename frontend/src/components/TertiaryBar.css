@@ -1,0 +1,47 @@
+
+.tertiary-bar {
+  background-color: #e0f2f1;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+}
+
+.bar-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #2980b9;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bar-button:hover {
+  color: #004d40;
+
+}
+@media (max-width: 600px) {
+  .tertiary-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 10px;
+  }
+
+  .bar-button {
+    font-size: 14px;          /* letra un poco más grande */
+    padding: 8px 12px;        /* más padding para mejor lectura */
+    border-radius: 6px;
+    background-color: #b2dfdb;
+    flex: 1 1 30%;            /* base 30% para máximo 3 por fila */
+    max-width: 160px;         /* ancho máximo para evitar que sean muy grandes */
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;        /* permitimos que no se corte */
+    text-overflow: clip;      /* sin "..." */
+  }
+}
+
+
+
