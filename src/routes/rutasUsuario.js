@@ -7,14 +7,17 @@ const { createSession } = require('../sessionService');
 
 // Ruta de prueba para verificar que funciona
 router.get('/', async (req, res) => {
+  console.log('📣 Petición recibida en /api/usuarios');  // esto siempre se verá en los logs
   try {
     const usuarios = await Usuario.find();
+    console.log('✅ Usuarios encontrados:', usuarios.length); // log adicional
     res.json(usuarios);
-  } catch (err) {
-    console.error('Error real al obtener usuarios:', err);  
-    res.status(500).json({ mensaje: 'Error al obtener los usuarios' });
+  } catch (error) {
+    console.error('❌ Error real al obtener usuarios:', error); // log del error real
+    res.status(500).json({ mensaje: "Error al obtener los usuarios" });
   }
 });
+
 
 
 
