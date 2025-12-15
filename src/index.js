@@ -2,13 +2,15 @@
 
 // index.js - FitMind (corregido: CORS al inicio + orden lógico)
 require('dotenv').config();
+require('./db'); // Conexión MongoDB
+
 
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
 
-const { mongoose } = require('./db'); // Conexión MongoDB
+const mongoose = require('mongoose'); 
 
 const app = express();
 const PORT = process.env.PORT || 4000;

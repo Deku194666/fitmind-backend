@@ -3,7 +3,8 @@ import { TextField, Button, Typography, Box, Select, MenuItem, InputLabel, FormC
 import './register.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { API_URL } from "../config";
+import API from "../api";
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -25,35 +26,34 @@ const Register = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  setErrorMessage('');
+  setSuccessMessage('');
 
-    try {
-      const response = await fetch(`${API_URL}/api/datosusuario/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const res = await API.post("/api/datosusuario/register", formData);
 
-      const data = await response.json();
+    // Guardar nombre e ID en localStorage
+    localStorage.setItem('usuarioNombre', res.data.nombre);
+    localStorage.setItem('usuarioId', res.data._id);
 
-      if (response.ok) {
-        // Guardar nombre e ID en localStorage
-        localStorage.setItem('usuarioNombre', data.nombre);
-        localStorage.setItem('usuarioId', data._id);
+    setSuccessMessage('Registro exitoso, puedes iniciar sesión');
 
-        setSuccessMessage('Registro exitoso, puedes iniciar sesión');
-        setTimeout(() => {
-          navigate('/login');
-        }, 3000); 
-      } else {
-        setErrorMessage(data.mensaje || 'Hubo un error en el registro');
-      }
-    } catch (error) {
-      setErrorMessage('Error en la conexión con el servidor');
+    setTimeout(() => {
+      navigate('/login');
+    }, 2000);
+
+  } catch (err) {
+    console.error('❌ Error en registro:', err);
+
+    if (err.response) {
+      setErrorMessage(err.response.data?.mensaje || 'Error en el registro');
+    } else {
+      setErrorMessage('Error de conexión con el servidor');
     }
-  };
+  }
+};
+
 
   return (
     <Box className='Registro-container'>

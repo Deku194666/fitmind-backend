@@ -1,9 +1,9 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from "../config";  
+import API from "../api";
+
 
 
 const Login = () => {
@@ -21,21 +21,10 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    console.log('=== INTENTANDO LOGIN ===');
-    console.log('🌍 Hostname:', window.location.hostname);
-
-    const endpoint = `${API_URL}/api/usuarios/login`;
-    console.log('🎯 Endpoint completo:', endpoint);
-
     try {
-      const res = await axios.post(endpoint, {
+      const res = await API.post("/api/usuarios/login", {
         email: formData.loginEmail,
         password: formData.loginPassword
-      }, {
-        timeout: 10000,
-        headers: {
-          'Content-Type': 'application/json'
-        }
       });
 
       console.log('✅ Login exitoso:', res.data);
