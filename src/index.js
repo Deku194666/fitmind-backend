@@ -1,8 +1,12 @@
 
 
-// index.js - FitMind (corregido: CORS al inicio + orden lógico)
-require('dotenv').config();
-require('./db'); // Conexión MongoDB
+// index.js - FitMind
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+require('./db'); // Conexión MongoDB (después de dotenv)
 
 
 const express = require('express');
