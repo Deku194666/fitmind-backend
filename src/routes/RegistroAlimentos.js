@@ -34,27 +34,29 @@ router.get('/:usuario_id', async (req, res) => {
 // GET: registros del día (por cada comida) ?fecha=YYYY-MM-DD
 router.get('/dia/:usuario_id', async (req, res) => {
   try {
-    console.log('DEBUG PROD user-id header:', req.headers['user-id']);
-    console.log('DEBUG PROD fecha query:', req.query.fecha);
-
     const { usuario_id } = req.params;
-    const fechaQ = req.query.fecha ? new Date(req.query.fecha) : new Date();
-    const ini = startOfDay(fechaQ);
-    const fin = new Date(ini); fin.setDate(fin.getDate() + 1);
+    const fechaStr = req.query.fecha; // "YYYY-MM-DD"
 
-    const rows = await Comida.find({
+    if (!fechaStr) {
+      return res.status(400).json({ error: 'Fecha requerida' });
+    }
+
+    const rows = await RegistroAlimentos.find({
       usuario_id,
-      fecha: { $gte: ini, $lt: fin },
+      $expr: {
+        $eq: [
+          { $dateToString: { format: "%Y-%m-%d", date: "$fecha" } },
+          fechaStr
+        ]
+      }
     }).sort({ comida: 1 });
 
     res.set({
-  'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-  'Pragma': 'no-cache',
-  'Expires': '0',
-  'Surrogate-Control': 'no-store', 
-
-});
-
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0',
+      'Surrogate-Control': 'no-store',
+    });
 
     res.json(rows);
   } catch (err) {
