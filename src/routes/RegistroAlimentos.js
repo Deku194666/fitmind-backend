@@ -47,6 +47,15 @@ router.get('/dia/:usuario_id', async (req, res) => {
       fecha: { $gte: ini, $lt: fin },
     }).sort({ comida: 1 });
 
+    res.set({
+  'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+  'Pragma': 'no-cache',
+  'Expires': '0',
+  'Surrogate-Control': 'no-store', 
+
+});
+
+
     res.json(rows);
   } catch (err) {
     console.error('Error al obtener comidas del día:', err);
