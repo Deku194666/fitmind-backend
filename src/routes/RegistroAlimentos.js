@@ -34,6 +34,9 @@ router.get('/:usuario_id', async (req, res) => {
 // GET: registros del día (por cada comida) ?fecha=YYYY-MM-DD
 router.get('/dia/:usuario_id', async (req, res) => {
   try {
+    console.log('DEBUG PROD user-id header:', req.headers['user-id']);
+    console.log('DEBUG PROD fecha query:', req.query.fecha);
+
     const { usuario_id } = req.params;
     const fechaQ = req.query.fecha ? new Date(req.query.fecha) : new Date();
     const ini = startOfDay(fechaQ);
