@@ -35,6 +35,11 @@ const corsOptions = {
       return callback(null, true);
     }
 
+    // ✅ Permitir Vercel (FitMind frontend)
+    if (origin === 'https://fitmind-frontend-phi.vercel.app') {
+      return callback(null, true);
+    }
+
     // Bloquear el resto
     return callback(new Error('Not allowed by CORS: ' + origin));
   },
