@@ -40,6 +40,7 @@ const corsOptions = {
       return callback(null, true);
     }
 
+
     // Bloquear el resto
     return callback(new Error('Not allowed by CORS: ' + origin));
   },

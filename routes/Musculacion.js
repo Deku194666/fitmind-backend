@@ -50,13 +50,15 @@ router.get('/ultimo-simple/:usuario_id', async (req, res) => {
 /* Registrar sesión */
 router.post('/', async (req, res) => {
   try {
-    const { usuario_id, tiempo, calorias } = req.body;
+    console.log('BODY RECIBIDO:', req.body);
+    
+    const { usuario_id, tiempo, calorias, notas } = req.body;
 
     if (!usuario_id || tiempo === undefined || calorias === undefined) {
       return res.status(400).json({ message: 'Datos incompletos' });
     }
 
-    const nuevaSesion = new Musculacion({ usuario_id, tiempo, calorias });
+    const nuevaSesion = new Musculacion({ usuario_id, tiempo, calorias, notas });
     await nuevaSesion.save();
 
     return res.status(201).json({ message: 'Sesión registrada con éxito' });
