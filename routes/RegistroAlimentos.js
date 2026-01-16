@@ -25,13 +25,13 @@ router.get('/dia/:usuario_id', async (req, res) => {
     // 🔑 Parse seguro de fecha (sin UTC bugs)
     const [y, m, d] = fechaStr.split('-').map(Number);
 
-    const inicio = new Date(y, m - 1, d, 0, 0, 0, 0);
-    const fin = new Date(y, m - 1, d, 23, 59, 59, 999);
-
+    const day = new Date(y, m - 1, d, 0, 0, 0, 0);
+    
     const rows = await Comida.find({
       usuario_id,
-      fecha: { $gte: inicio, $lte: fin }
+      fecha: day
     }).sort({ comida: 1 });
+
 
     res.json(rows);
   } catch (err) {
