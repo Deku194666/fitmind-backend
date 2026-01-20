@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const MusculacionSchema = new mongoose.Schema({
+<<<<<<< HEAD
   usuario_id: {
     type: String,
     required: true
@@ -9,6 +10,13 @@ const MusculacionSchema = new mongoose.Schema({
   tiempo: {
     type: Number,
     required: true
+=======
+  usuario_id: { type: String, required: true },
+
+  tiempo: {
+    type: Number,
+    required: true // segundos
+>>>>>>> 6e1ee9e3f93555d4e752418bd080795ae0a362f6
   },
 
   calorias: {
@@ -23,7 +31,11 @@ const MusculacionSchema = new mongoose.Schema({
 
   fecha: {
     type: Date,
+<<<<<<< HEAD
     default: Date.now   // ⬅️ CLAVE
+=======
+    default: Date.now
+>>>>>>> 6e1ee9e3f93555d4e752418bd080795ae0a362f6
   }
 });
 

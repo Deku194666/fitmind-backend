@@ -108,12 +108,18 @@ router.get('/ultimo-simple/:usuario_id', async (req, res) => {
 ========================= */
 router.post('/', async (req, res) => {
   try {
+<<<<<<< HEAD
+=======
+    console.log('BODY RECIBIDO:', req.body);
+    
+>>>>>>> 6e1ee9e3f93555d4e752418bd080795ae0a362f6
     const { usuario_id, tiempo, calorias, notas } = req.body;
 
     if (!usuario_id || tiempo === undefined || calorias === undefined) {
       return res.status(400).json({ message: 'Datos incompletos' });
     }
 
+<<<<<<< HEAD
     const nuevaSesion = new Musculacion({
       usuario_id,
       tiempo,
@@ -121,6 +127,9 @@ router.post('/', async (req, res) => {
       notas,
     });
 
+=======
+    const nuevaSesion = new Musculacion({ usuario_id, tiempo, calorias, notas });
+>>>>>>> 6e1ee9e3f93555d4e752418bd080795ae0a362f6
     await nuevaSesion.save();
 
     return res.status(201).json({ message: 'Sesión registrada con éxito' });
