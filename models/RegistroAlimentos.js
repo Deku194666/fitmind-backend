@@ -1,4 +1,3 @@
-// models/RegistroAlimentos.js
 const mongoose = require('mongoose');
 
 const AlimentoSchema = new mongoose.Schema({
@@ -13,20 +12,32 @@ const AlimentoSchema = new mongoose.Schema({
 
 const RegistroAlimentosSchema = new mongoose.Schema({
   usuario_id: { type: String, required: true, index: true },
+
+  // 🔑 CLAVES INTERNAS (frontend-friendly)
   comida: {
     type: String,
-    enum: ['Desayuno', 'Colación Mañana', 'Almuerzo', 'Colación Tarde', 'Cena'],
+    enum: [
+      'desayuno',
+      'colacion_manana',
+      'almuerzo',
+      'colacion_tarde',
+      'cena',
+    ],
     required: true,
     index: true,
   },
-  fecha: { type: Date, default: Date.now, index: true }, // 🔑
+
+  fecha: { type: Date, required: true, index: true },
+
   alimentos: { type: [AlimentoSchema], default: [] },
 }, { timestamps: true });
 
-// Upsert por día (usuario_id + comida + fecha normalizada)
-// Si quieres evitar duplicados exactos de día:
 RegistroAlimentosSchema.index(
-  { usuario_id: 1, comida: 1, fecha: 1 }
+  { usuario_id: 1, comida: 1, fecha: 1 },
+  { unique: true }
 );
 
-module.exports = mongoose.model('RegistroAlimentos', RegistroAlimentosSchema);
+module.exports = mongoose.model(
+  'RegistroAlimentos',
+  RegistroAlimentosSchema
+);
