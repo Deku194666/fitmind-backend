@@ -155,6 +155,17 @@ app.use('/api/alimentos', checkSessionTimeout, rutasAlimentos);
 const rutasRegistroAlimentos = require('./routes/RegistroAlimentos');
 app.use('/api/registroalimentos', checkSessionTimeout, rutasRegistroAlimentos);
 
+const rutasAgendaCalendario = require('./routes/AgendaCalendario');
+app.use('/api/agendacalendario', checkSessionTimeout, rutasAgendaCalendario);
+
+const rutasMovimiento = require('./routes/Movimiento');
+app.use('/api/movimientos', checkSessionTimeout, rutasMovimiento);
+
+const rutasTasks = require('./routes/tasks');
+app.use('/api/tasks', checkSessionTimeout, rutasTasks);
+
+
+
 // --- Ruta de debug para ver headers ---
 app.get('/debug/headers', (req, res) => {
   res.json(req.headers);

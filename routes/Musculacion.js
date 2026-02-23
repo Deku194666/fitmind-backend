@@ -79,6 +79,28 @@ router.get('/dia/:usuario_id', async (req, res) => {
 });
 
 /* =========================
+   🔄 COMPATIBILIDAD
+========================= */
+router.get('/ultimo-simple/:usuario_id', async (req, res) => {
+  try {
+    const { usuario_id } = req.params;
+
+    const doc = await Musculacion
+      .findOne({ usuario_id })
+      .sort({ _id: -1 });
+
+    if (!doc) {
+      return res.status(404).json({ mensaje: 'No hay sesiones registradas' });
+    }
+
+    return res.json(doc);
+  } catch (err) {
+    console.error('❌ Error último-simple:', err);
+    return res.status(500).json({ mensaje: 'Error del servidor' });
+  }
+});
+
+/* =========================
    ➕ REGISTRAR SESIÓN
 ========================= */
 router.post('/', async (req, res) => {
@@ -93,7 +115,7 @@ router.post('/', async (req, res) => {
       usuario_id,
       tiempo,
       calorias,
-      notas
+      notas,
     });
 
     await nuevaSesion.save();
