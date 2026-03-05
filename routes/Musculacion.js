@@ -50,6 +50,7 @@ router.get('/ultimo/:usuario_id', async (req, res) => {
 
 /* =========================
    🟢 SESIONES POR DÍA
+   fecha = YYYY-MM-DD (STRING)
 ========================= */
 router.get('/dia/:usuario_id', async (req, res) => {
   try {
@@ -60,6 +61,8 @@ router.get('/dia/:usuario_id', async (req, res) => {
       return res.status(400).json({ error: 'Fecha requerida' });
     }
 
+
+    // 👇 convertir día local a rango UTC (Chile UTC-3)
     const inicioDia = new Date(`${fecha}T00:00:00-03:00`);
     const finDia = new Date(`${fecha}T23:59:59-03:00`);
 
@@ -77,6 +80,7 @@ router.get('/dia/:usuario_id', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener musculación del día' });
   }
 });
+
 
 /* =========================
    🔄 COMPATIBILIDAD
