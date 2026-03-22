@@ -107,4 +107,96 @@ router.post('/', async (req, res) => {
 
 
 
+/* =========================
+   🔥 CALORÍAS POR DÍA (PARA GRÁFICO)
+========================= */
+router.get('/calorias/:usuario_id', async (req, res) => {
+  try {
+    const { usuario_id } = req.params;
+
+    const registros = await Comida.find({ usuario_id });
+
+    // 🔥 Agrupar por fecha
+    const caloriasPorDia = {};
+
+    registros.forEach(doc => {
+      const fecha = doc.fecha.toISOString().split('T')[0];
+
+      if (!caloriasPorDia[fecha]) {
+        caloriasPorDia[fecha] = 0;
+      }
+
+      // sumar calorías de todos los alimentos
+      doc.alimentos.forEach(alimento => {
+        caloriasPorDia[fecha] += Number(alimento.calorias) || 0;
+      });
+    });
+
+    // 🔄 convertir a array
+    const resultado = Object.keys(caloriasPorDia).map(fecha => ({
+      fecha,
+      calorias_consumidas: caloriasPorDia[fecha]
+    }));
+
+    // ordenar por fecha
+    resultado.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+    res.json(resultado);
+
+  } catch (err) {
+    console.error('❌ Error calorías:', err);
+    res.status(500).json({ error: 'Error al calcular calorías' });
+  }
+});
+
+
+
+/* =========================
+   🧠 MACROS POR DÍA
+========================= */
+router.get('/macros/:usuario_id', async (req, res) => {
+  try {
+    const { usuario_id } = req.params;
+
+    const registros = await Comida.find({ usuario_id });
+
+    const macrosPorDia = {};
+
+    registros.forEach(doc => {
+      const fecha = doc.fecha.toISOString().split('T')[0];
+
+      if (!macrosPorDia[fecha]) {
+        macrosPorDia[fecha] = {
+          proteinas: 0,
+          carbohidratos: 0,
+          grasas: 0,
+          fibra: 0
+        };
+      }
+
+      doc.alimentos.forEach(alimento => {
+        macrosPorDia[fecha].proteinas += Number(alimento.proteinas) || 0;
+        macrosPorDia[fecha].carbohidratos += Number(alimento.carbohidratos) || 0;
+        macrosPorDia[fecha].grasas += Number(alimento.grasas) || 0;
+        macrosPorDia[fecha].fibra += Number(alimento.fibra) || 0;
+      });
+    });
+
+    const resultado = Object.keys(macrosPorDia).map(fecha => ({
+      fecha,
+      ...macrosPorDia[fecha]
+    }));
+
+    resultado.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+    res.json(resultado);
+
+  } catch (err) {
+    console.error('❌ Error macros:', err);
+    res.status(500).json({ error: 'Error al calcular macros' });
+  }
+});
+
+
+
 module.exports = router;

@@ -164,8 +164,10 @@ app.use('/api/movimientos', checkSessionTimeout, rutasMovimiento);
 const rutasTasks = require('./routes/tasks');
 app.use('/api/tasks', checkSessionTimeout, rutasTasks);
 
-
 const habitRoutes = require("./routes/Habits");
+
+const habitRoutes = require("./routes/habits");
+
 app.use("/api/habits", habitRoutes);
 
 const rutasPerfilMedico = require('./routes/PerfilMedico');
@@ -176,6 +178,12 @@ app.use("/api/fasting", fastingRoutes);
 
 const rutasSkincare = require('./routes/SkinCare');
 app.use('/api/skincare', checkSessionTimeout, rutasSkincare);
+
+const rutasEmociones = require('./routes/Emocion');
+app.use('/api/emociones', checkSessionTimeout, rutasEmociones);
+
+const historialFastingRoutes = require("./routes/HistorialFasting");
+app.use("/api/historialFasting", historialFastingRoutes);
 
 // --- Ruta de debug para ver headers ---
 app.get('/debug/headers', (req, res) => {
