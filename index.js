@@ -164,7 +164,7 @@ app.use('/api/movimientos', checkSessionTimeout, rutasMovimiento);
 const rutasTasks = require('./routes/tasks');
 app.use('/api/tasks', checkSessionTimeout, rutasTasks);
 
-const habitRoutes = require("./routes/habits");
+const habitRoutes = require("./routes/Habits");
 app.use("/api/habits", habitRoutes);
 
 const rutasPerfilMedico = require('./routes/PerfilMedico');
