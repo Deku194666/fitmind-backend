@@ -26,6 +26,7 @@ const MusculacionSchema = new mongoose.Schema({
 
     default: Date.now,
 
+
     default: Date.now   // ⬅️ CLAVE
   }
 });

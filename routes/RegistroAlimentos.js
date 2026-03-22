@@ -106,7 +106,6 @@ router.post('/', async (req, res) => {
 });
 
 
-
 /* =========================
    🔥 CALORÍAS POR DÍA (PARA GRÁFICO)
 ========================= */
@@ -196,7 +195,6 @@ router.get('/macros/:usuario_id', async (req, res) => {
     res.status(500).json({ error: 'Error al calcular macros' });
   }
 });
-
 
 
 module.exports = router;
