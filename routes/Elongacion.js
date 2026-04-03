@@ -15,6 +15,26 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+
+// 🟢 HISTORIAL COMPLETO (para gráficos)
+router.get('/historial/:usuario_id', async (req, res) => {
+  try {
+    const { usuario_id } = req.params;
+
+    const registros = await Elongacion
+      .find({ usuario_id })
+      .sort({ fecha: 1 }); // orden cronológico
+
+    res.json(registros);
+  } catch (error) {
+    console.error('❌ Error historial elongación:', error);
+    res.status(500).json({ error: 'Error al obtener historial de elongación' });
+  }
+});
+
+
+
 router.get('/:usuario_id', async (req, res) => {
   try {
     const registros = await Elongacion.find({ usuario_id: req.params.usuario_id }).sort({ fecha: -1 }).limit(1);

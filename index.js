@@ -40,6 +40,7 @@ const corsOptions = {
       return callback(null, true);
     }
 
+
     // Bloquear el resto
     return callback(new Error('Not allowed by CORS: ' + origin));
   },
@@ -153,6 +154,38 @@ app.use('/api/alimentos', checkSessionTimeout, rutasAlimentos);
   
 const rutasRegistroAlimentos = require('./routes/RegistroAlimentos');
 app.use('/api/registroalimentos', checkSessionTimeout, rutasRegistroAlimentos);
+
+const rutasAgendaCalendario = require('./routes/AgendaCalendario');
+app.use('/api/agendacalendario', checkSessionTimeout, rutasAgendaCalendario);
+
+const rutasMovimiento = require('./routes/Movimiento');
+app.use('/api/movimientos', checkSessionTimeout, rutasMovimiento);
+
+const rutasTasks = require('./routes/tasks');
+app.use('/api/tasks', checkSessionTimeout, rutasTasks);
+
+
+const habitRoutes = require("./routes/Habits");
+app.use("/api/habits", habitRoutes);
+
+const rutasPerfilMedico = require('./routes/PerfilMedico');
+app.use('/api/infomedica', checkSessionTimeout, rutasPerfilMedico);
+
+const fastingRoutes = require("./routes/fasting");
+app.use("/api/fasting", fastingRoutes);
+
+const rutasSkincare = require('./routes/SkinCare');
+app.use('/api/skincare', checkSessionTimeout, rutasSkincare);
+
+const rutasEmociones = require('./routes/Emocion');
+app.use('/api/emociones', checkSessionTimeout, rutasEmociones);
+
+const historialFastingRoutes = require("./routes/HistorialFasting");
+app.use("/api/historialFasting", historialFastingRoutes);
+
+const comidasRoutes = require("./routes/comidas");
+app.use('/api/comidas', comidasRoutes);
+
 
 // --- Ruta de debug para ver headers ---
 app.get('/debug/headers', (req, res) => {

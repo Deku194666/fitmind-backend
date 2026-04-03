@@ -1,12 +1,30 @@
-
-
 const mongoose = require('mongoose');
 
 const MusculacionSchema = new mongoose.Schema({
-  usuario_id: { type: String, required: true },
-  tiempo: { type: Number, required: true }, // en segundos
-  calorias: { type: Number, required: true },
-  fecha: { type: Date, default: Date.now }
+  usuario_id: {
+    type: String,
+    required: true
+  },
+
+  tiempo: {
+    type: Number,
+    required: true
+  },
+
+  calorias: {
+    type: Number,
+    required: true
+  },
+
+  notas: {
+    type: String,
+    default: ''
+  },
+
+  fecha: {
+    type: Date,
+    default: Date.now   // ⬅️ CLAVE
+  }
 });
 
 module.exports = mongoose.model('Musculacion', MusculacionSchema);

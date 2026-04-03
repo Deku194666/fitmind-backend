@@ -16,13 +16,20 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET /api/sueno - (opcional) obtener todos los registros de sueño
-router.get('/', async (req, res) => {
+
+
+// GET /api/sueno/historial/:usuario_id
+router.get('/historial/:usuario_id', async (req, res) => {
   try {
-    const registros = await Sueno.find().sort({ fecha: -1 });
+    const { usuario_id } = req.params;
+
+    const registros = await Sueno.find({ usuario_id })
+      .sort({ fecha: 1 });
+
     res.json(registros);
   } catch (error) {
-    res.status(500).json({ error: 'Error obteniendo registros' });
+    console.error('Error obteniendo historial de sueño:', error);
+    res.status(500).json({ error: 'Error obteniendo historial de sueño' });
   }
 });
 
