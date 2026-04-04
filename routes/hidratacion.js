@@ -43,9 +43,22 @@ router.get('/resumen/:usuario_id', async (req, res) => {
   try {
     const { usuario_id } = req.params;
 
-    const hoy = new Date();
-    const inicioDia = new Date(hoy.setHours(0, 0, 0, 0));
-    const finDia = new Date(hoy.setHours(23, 59, 59, 999));
+    const timeZone = 'America/Santiago';
+
+    const ahora = new Date();
+
+    // Convertir a hora de Chile
+    const ahoraChile = new Date(
+      ahora.toLocaleString('en-US', { timeZone })
+    );
+
+    // Inicio del día en Chile
+    const inicioDia = new Date(ahoraChile);
+    inicioDia.setHours(0, 0, 0, 0);
+
+    // Fin del día en Chile
+    const finDia = new Date(ahoraChile);
+    finDia.setHours(23, 59, 59, 999);
 
     const registrosHoy = await Hidratacion.find({
       usuario_id,
@@ -55,6 +68,7 @@ router.get('/resumen/:usuario_id', async (req, res) => {
     const total = registrosHoy.reduce((t, r) => t + r.cantidad_ml, 0);
 
     res.json({ total_ml: total });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Error al obtener resumen' });
